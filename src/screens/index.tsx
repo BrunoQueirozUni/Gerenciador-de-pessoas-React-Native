@@ -23,13 +23,13 @@ export function Home() {
             <TextInput
                placeholder="Digite o nome do convidado"
                placeholderTextColor="#6B6B6B"
-               className="h-[50px] bg-[#1F1E25] text-white p-[16px] font-[16] rounded-[8px] flex-1"
+               className="h-[50px] bg-[#1F1E25] text-white p-[16px] font-[16px] rounded-[8px] flex-1"
             />
             <TouchableOpacity onPress={handleAddParticipant} className=" bg-green-600 flex items-center justify-center rounded-[8px]">
                <Text className="text-4xl text-white px-6">+</Text>
             </TouchableOpacity>
          </View>
-         <View className="mt-4">
+         <View className="mt-4 flex-1">
             <FlatList
                data={participantes}
                keyExtractor={item => item}
