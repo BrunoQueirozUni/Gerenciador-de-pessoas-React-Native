@@ -25,6 +25,11 @@ export function Home() {
                placeholderTextColor="#6B6B6B"
                className="h-[50px] bg-[#1F1E25] text-white p-[16px] font-[16px] rounded-[8px] flex-1"
             />
+            <TextInput
+               placeholder="N° Idade"
+               placeholderTextColor="#6B6B6B"
+               className="h-[50px] bg-[#1F1E25] text-white p-[16px] font-[16px] rounded-[8px]"
+            />
             <TouchableOpacity onPress={handleAddParticipant} className=" bg-green-600 flex items-center justify-center rounded-[8px]">
                <Text className="text-4xl text-white px-6">+</Text>
             </TouchableOpacity>
@@ -37,6 +42,7 @@ export function Home() {
                   <Participante
                      key={item}
                      nome={item}
+                     idade={Math.floor(Math.random() * 200)}
                      onRemove={() => handleRemoverParticipante(item)} />
                )}
                showsVerticalScrollIndicator={false}
