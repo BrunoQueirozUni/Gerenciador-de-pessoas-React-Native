@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from "react-native";
 import { Participante } from "~/components/Participante";
 
 export function Home() {
 
-   const participantes = ["Demetrian Titus", "John Doe", "Marneus Calgar", "Vulkan", "Rogal Dorn", "Gadriel", "Charion", "Lion El'Jonson", "Sanguinius", "Roboute Guilliman", "Fulgrim", "Angron", "Mortarion", "Magnus", "Leman Russ", "Jaghatai Khan", "Konrad Curze", "Perturabo", "Alpharius", "Omegon"];
+   const [participantes, setParticipantes] = useState(["Roboute Guilliman"])
+
+   //const participantes = ["Demetrian Titus", "John Doe", "Marneus Calgar", "Vulkan", "Rogal Dorn", "Gadriel", "Charion", "Lion El'Jonson", "Sanguinius", "Roboute Guilliman", "Fulgrim", "Angron", "Mortarion", "Magnus", "Leman Russ", "Jaghatai Khan", "Konrad Curze", "Perturabo", "Alpharius", "Omegon"];
 
 
 
@@ -12,6 +15,7 @@ export function Home() {
          return Alert.alert("Participante já adicionado", "Este participante já foi adicionado à lista de convidados.");
       };
 
+      setParticipantes(prevState => [...prevState, "John Doe"]);
       console.log("Adicionando participante...");
    };
 
