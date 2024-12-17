@@ -1,17 +1,34 @@
-import { Text, View, TextInput, TouchableOpacity, FlatList } from "react-native";
+import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from "react-native";
 import { Participante } from "~/components/Participante";
 
 export function Home() {
 
    const participantes = ["Demetrian Titus", "John Doe", "Marneus Calgar", "Vulkan", "Rogal Dorn", "Gadriel", "Charion", "Lion El'Jonson", "Sanguinius", "Roboute Guilliman", "Fulgrim", "Angron", "Mortarion", "Magnus", "Leman Russ", "Jaghatai Khan", "Konrad Curze", "Perturabo", "Alpharius", "Omegon"];
 
+
+
    function handleAddParticipant() {
+      if (participantes.includes("Demetrian Titus")) {
+         return Alert.alert("Participante já adicionado", "Este participante já foi adicionado à lista de convidados.");
+      };
+
       console.log("Adicionando participante...");
-   }
+   };
 
    function handleRemoverParticipante(nome: string) {
+      Alert.alert("Remover participante", `Deseja remover o participante ${nome}?`, [
+         {
+            text: "Sim",
+            onPress: () => Alert.alert("Participante removido")
+         },
+         {
+            text: "Não",
+            style: "cancel"
+         }
+      ]);
+
       console.log(`Removendo participante ${nome}...`);
-   }
+   };
 
    return (
       <View className="flex-1 p-6 bg-[#131016]">
